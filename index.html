@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark/Night Mode</title>
+  </head>
+
+  <style>
+    .container {
+      margin: 0px 30px;
+      position:absolute
+      ;
+    
+      top: 8px;
+      right: 16px;
+      font-size: 18px;
+  
+    }
+    .theme {
+      height: 50px;
+      margin-left: 5px;
+      
+      padding: 10px;
+    }
+
+    .active{
+        border: 2px solid rgb(255, 255, 255);
+      border-radius: 50px;
+    }
+
+    .para{
+        padding-top: 10px;
+        font-size: larger;
+    }
+
+    .theme-light{
+        background-color: #61c6f4;
+        color: #000;
+    }
+
+    .theme-dark{
+        background-color: #000;
+        color: #fff;
+    }
+  </style>
+
+
+  <body id="body" class="theme-dark">
+    <div class="container">
+      <img src="night-mode.png" class="theme" id="dark" onclick="darkmode()"/>
+      <img src="day-mode.png" class="theme active" id="light" onclick="lightmode()"/>
+    </div>
+
+    <p class="para">
+        <h1>Lorem Ipsum</h1><hr>
+
+    <h3>What is Lorem Ipsum?</h3>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <script>
+        function darkmode(){
+            const imgdark = document.getElementById("dark");
+            imgdark.classList.add("active");
+
+            const imglight = document.getElementById("light");
+            imglight.classList.remove("active");
+
+            const body_element = document.getElementById("body");
+            body_element.className = "theme-dark"
+        }
+
+        function lightmode(){
+            const imgdark = document.getElementById("dark");
+            imgdark.classList.remove("active");
+
+            const imglight = document.getElementById("light");
+            imglight.classList.add("active");
+
+            const body_element = document.getElementById("body");
+            body_element.className = "theme-light"
+        }
+    </script>
+  </body>
+</html>
